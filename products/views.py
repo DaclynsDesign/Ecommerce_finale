@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import ProductModel
 from carts.models import CartModel
+from products.options import size, color,quantity
 '''
     NB: Every class based view takes in a model which gives us 
     context and it automatically use get_context_data 
@@ -31,6 +32,10 @@ class ProductDetail(DetailView):
         context = super(ProductDetail, self).get_context_data(**kwargs)
         cart_obj, new_obj = CartModel.objects.new_or_get_cart(self.request)
         context['cart'] = cart_obj
+        context['size'] = size
+        context['color'] = color 
+        context['quantity'] = quantity
+        
         return context
         
 

@@ -46,6 +46,7 @@ class CartModelManager(models.Manager):
 class CartModel(models.Model):
     user = models.ForeignKey(User, null=True , blank=True)
     products = models.ManyToManyField(ProductModel, blank=True)
+    # quantity = models.IntegerField(default=2,choices=QUANTITY)
     subtotal = models.DecimalField(decimal_places=0, max_digits=10, default=0.10)
     total = models.DecimalField(decimal_places=0, max_digits=10, default=0.10)
     timestamp = models.DateTimeField(auto_now_add=True)

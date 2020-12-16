@@ -55,7 +55,7 @@ $(document).ready(function () {
                     );
                 } else {
                     submitspan.html(
-                        "<button class='btn btn-md  btn-outline-primary' type='submit'> <i class='fas fa-shopping-cart'></i> </button>"
+                        "<button class='btn btn-md  btn-outline-primary' type='submit'> ADD TO CART </button>"
                     );
                 }
                 //Changing the cart number

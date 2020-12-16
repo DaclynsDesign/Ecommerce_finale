@@ -19,11 +19,12 @@ def cart_refresh(request):
             'name':x.title,
             'price':x.price,
             'url': x.get_absolute_url(),
-            'image':x.image.url
+            'image':x.image.url,
+            'quantity':quantity
         
         } 
         for x in cart_obj.products.all()]
-    cart_data = {'products':products,'subtotal':cart_obj.subtotal, 'total':cart_obj.total}
+    cart_data = {'products':products,'quantity':quantity,'subtotal':cart_obj.subtotal, 'total':cart_obj.total}
     return JsonResponse(cart_data)
 
 # The view function for displaying our cart home where products have been added

@@ -66,7 +66,7 @@ class ProductModel(models.Model):
     image  = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
     featured = models.BooleanField(default=False)
     recommended = models.BooleanField(default=False)
-    
+      
     # Our boolean
     adinkra = models.BooleanField(default=False)
     couple = models.BooleanField(default=False)
